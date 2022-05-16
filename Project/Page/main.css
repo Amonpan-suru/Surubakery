@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    background: url(pic/BG1.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+#nav-top{
+	width: 100%;
+	height: 50px;
+}
+
+#layer{
+
+}
+
+#layer div{
+    font-size: 12px;
+	/* width:200px;
+	border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+	height: 400px;
+	margin: 1%;
+	text-align: center; */
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+}
+
+h1, h2 {
+    font-size: 28px;
+    font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 16px;
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.container{
+    grid-column: span 3;
+
+    height: auto;
+}
+
+.box {
+    background-color: white;
+	border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+	height: auto;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.center {
+    text-align: center;
+}
+
+.button1 {
+    width: 50px;
+    height: 50px;
+    background-color: #FFC9C9; 
+    color: white; 
+    border: 2px solid #4CAF50;
+    border-width: 0;
+    box-shadow: 0px 4px 10px rgba(146, 170, 183, 0.25);
+    border-radius: 50%;
+    font-size: 24px;
+  }
+  
+  .button1:hover {
+    width: 50px;
+    height: 50px;
+    background-color: #f1a2a2;
+    color: white;
+    border-width: 0;
+    box-shadow: 0px 4px 10px rgba(146, 170, 183, 0.25);
+    border-radius: 50%;
+    font-size: 24px;
+  }
+  
+.addToCart {
+    height: 50px;
+    width: 100%;
+    background: #FF8383;
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+    border-radius: 66px;
+    border-width: 0;
+    font-size: 18px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.addToCart:hover {
+    height: 50px;
+    width: 100%;
+    background: #ec5d5d;
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+    border-radius: 66px;
+    border-width: 0;
+    font-size: 18px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.shopIcon{
+    margin: 4px;;
+    background-image: url(pic/shopIcon.png);
+    height: 24px;
+    width: 24px;
+    background-size: cover;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #E2E5E4;
+    border-radius: 66px;
+    width: 100%;
+    height: 45px;
+    margin: 8px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    max-width: 100px;
+}
+
+.shelf{
+    content: url("pic/shelf.png");
+}
+
+.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu {
+    height: 80px;
+    background-color: rgb(44, 34, 29);
+}
+
+
+i {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.fa-solid{
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.fa-cart-plus {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 1387px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-gap: 16px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    
+    .container{
+        grid-column: span 3;
+        height: auto;
+    }
+
+   
+}
+
+@media screen and (max-width: 958px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 16px;
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+    
+    .container{
+        grid-column: span 4;
+        height: auto;
+    }
+
+    .shelf{
+        content: url("pic/shelf2.png");
+    }
+}
+
+@media screen and (max-width: 684px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 16px;
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+    
+    .container{
+        grid-column: span 4;
+        height: auto;
+    }
+    
+    .shelf{
+        content: url("pic/shelf3.png");
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 16px;
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+    
+    .container{
+        grid-column: span 4;
+        height: auto;
+    }
+
+    .shelf{
+        content: url("pic/shelf4.png");
+    }
+}

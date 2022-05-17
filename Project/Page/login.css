@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    background: url(pic/BG5.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.formBox {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+    border-radius: 10px;
+
+    padding: 64px;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #E2E5E4;
+    border-radius: 66px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 291px;
+    height: 59px;
+    background-color: #FF8383; 
+    color: white; 
+    border: 2px solid #4CAF50;
+    border-width: 0;
+    font-size: 24px;
+    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+    border-radius: 66px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #ec5d5d;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-family: 'Nunito', sans-serif;
+    display: inline;
+  }
+
+  form {
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  a {
+    font-size: 22px;
+    color: #FF8383;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    display: inline;
+  }
+
+  .leftText{
+    text-align: left;
+  }
+
+  .centerText{
+    text-align: center;
+    display: inline;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+  margin-left: 160px;
+  margin-right: 160px;
+}
+
+.container{
+  grid-column: span 6;
+
+  height: auto;
+}

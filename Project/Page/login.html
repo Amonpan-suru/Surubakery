@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="login.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class ="center">
-    <div id=container class="formBox">
-        <div class ="centerText"><h1>Log in</h1></div>
-        <form class="form" action="/checkLogin" method="post" accept-charset="utf-8">
-                Username<input type="text" name="username" value="" placeholder="" required><br>
-                Password <input type="password" name="password" value="" placeholder="" required><br>
-                <span id="errordisplay"></span><br>
+    <link rel="stylesheet" href="login.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="center">
+      <div class="centerText">
+        <img src="pic/Logo.png" class="logo" /> <br />
+      </div>
 
-                <div class ="centerText">
-                <p>Don’t have account <a href="register.html"> register now</a></p>
-                <input type="submit" value="Login">
-            </div>
-                
-                
+      <div id="container" class="formBox">
+        <div class="centerText">
+          <h1>Log in</h1>
+        </div>
+        <br />
+        <form
+          class="form"
+          action="/checkLogin"
+          method="post"
+          accept-charset="utf-8"
+        >
+          Username<input
+            type="text"
+            name="username"
+            value=""
+            placeholder=""
+            required
+          /><br />
+          Password
+          <input
+            type="password"
+            name="password"
+            value=""
+            placeholder=""
+            required
+          /><br />
+          <span id="errordisplay"></span><br />
 
+          <div class="centerText">
+            <p>Don’t have account <a href="register.html"> register now</a></p>
+            <input type="submit" value="Login" />
+          </div>
         </form>
-    </div>    
+      </div>
     </div>
-</body>
+  </body>
 </html>

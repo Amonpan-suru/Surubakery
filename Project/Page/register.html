@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" type="text/css" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class ="center, grid-container" >
-        <div class="container">
-        <div id=container class="formBox">
-    <div id=container>
-       
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="center">
+      <div id="container" class="formBox">
         <div>
-            <img src="pic/back.png">
-            <div class="centerText">
+          <a href="login.html"><img src="pic/back.png" class="icon" /></a>
+          <div class="centerText">
             <h1>Register</h1>
-        </div>
+          </div>
         </div>
 
-        <form class="form" action="/regisDB" method="post" accept-charset="utf-8">
-                Username<input type="text" name="username" value="" placeholder="" required><br>
-                E-mail<input type="text" name="email" value="" placeholder="" required><br>            
-                Password <input type="password" name="password" value="" placeholder=""><br>
-                Confirm Password <input type="password" name="confirmpassword" value="" placeholder=""><br>
-                <span id="errordisplay"></span><br>
-                <div class ="centerText">
-                <input type="submit" name="submit" value="Register">
-            </div>
-            </form>
-        </div>
+        <br />
+        <form
+          class="form"
+          action="/regisDB"
+          method="post"
+          accept-charset="utf-8"
+        >
+          Username
+          <input
+            type="text"
+            name="username"
+            value=""
+            placeholder=""
+            required
+          /><br />
+          E-mail
+          <input
+            type="text"
+            name="email"
+            value=""
+            placeholder=""
+            required
+          /><br />
+          Password
+          <input
+            type="password"
+            name="password"
+            value=""
+            placeholder=""
+          /><br />
+          Confirm Password
+          <input
+            type="password"
+            name="confirmpassword"
+            value=""
+            placeholder=""
+          /><br />
+          <span id="errordisplay"></span><br />
+
+          <div class="centerText">
+            <input type="submit" name="submit" value="Register" />
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-    </div>
-</body>
+  </body>
 </html>

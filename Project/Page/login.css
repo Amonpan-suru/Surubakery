@@ -8,10 +8,11 @@ body {
 
 .formBox {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
-    border-radius: 10px;
-
-    padding: 64px;
+      box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);
+      border-radius: 10px;
+      width: 500px;
+      margin: auto;
+      padding: 64px;
 }
 
 .center{
@@ -64,10 +65,16 @@ input[type=text], input[type=password], select {
     color: #FF8383;
   }
 
-  img {
+  .icon {
     width: 24px;
     height: 24px;
     display: inline;
+  }
+
+  .logo{
+    width: 200px;
+    height: auto;
+    margin-bottom: 32px;
   }
 
   .leftText{
@@ -76,19 +83,44 @@ input[type=text], input[type=password], select {
 
   .centerText{
     text-align: center;
-    display: inline;
 }
+    @media screen and (max-width: 684px) {
+.formBox {
+    width: 350px;
+    margin: auto;
+    padding: 32px;
+  }
 
-.grid-container{
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 16px;
-  margin-left: 160px;
-  margin-right: 160px;
-}
+     h1 {
+       font-size: 24px;
+       font-family: 'Nunito', sans-serif;
+     }
 
-.container{
-  grid-column: span 6;
+    a {
+        font-size: 18px;
+      }
 
-  height: auto;
-}
+    form {
+      font-size: 16px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+        input[type=submit] {
+          width: 250px;
+          height: 50px;
+          font-size: 18px;
+        }
+  }
+  
+    @media screen and (max-width: 470px) {
+.formBox {
+    width: 80%;
+    width: 250px;
+  }
+
+    input[type=submit] {
+      width: 250px;
+      height: 45px;
+      font-size: 18px;
+    }
+    }

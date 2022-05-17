@@ -1,0 +1,26 @@
+{
+	"cart1":{
+		"name": "Brownie",
+		"price":"15",
+		"pic":"Brownie.png",
+        "pice":"2"
+	},
+    "cart2":{
+		"name": "Cake",
+		"price":"15",
+		"pic":"ChocolateCake.png",
+        "pice":"3"
+	},
+    "cart3":{
+		"name": "Croissant",
+		"price":"15",
+		"pic":"Croissant.png",
+        "pice":"4"
+	},
+    "cart4":{
+		"name": "Cookie",
+		"price":"15",
+		"pic":"Cookie.png",
+        "pice":"5"
+	}
+}

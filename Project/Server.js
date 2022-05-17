@@ -85,8 +85,8 @@ app.post('/checkLogin',async (req,res) => {
     // ถ้าเช็คแล้ว username และ password ไม่ถูกต้อง
     // return res.redirect('login.html?error=1')
     let sql_loing = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, username VARCHAR(255), email VARCHAR(100),password VARCHAR(100),img VARCHAR(100))";
-    let result_loing = await queryDB(sql);
     let sql = `SELECT id, username, password, img FROM ${tablename}`;
+
     let result = await queryDB(sql);
     result = Object.assign({},result);
     // console.log(result);
@@ -160,6 +160,15 @@ const Updatestore =  (data) =>{
         resolve(sql_storedata);
     })
 }
+
+app.get('/bakery', async (req, res) => {
+    const query = `SELECT store_id ,item_name, price ,stock ,img_item FROM storedata`
+    let data = await queryDB(query)
+    console.log(data)
+    data = Object.assign({},data);
+    var Json = JSON.stringify(data);
+    res.send(Json)
+})
 
 app.post('/addtocart', async (req, res) => {
     const data = req.body;

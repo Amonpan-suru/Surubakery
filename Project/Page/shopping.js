@@ -1,16 +1,17 @@
 window.onload = pageLoad;
 
-function pageLoad(){
-    var xhr = new XMLHttpRequest(); 
-    xhr.open("GET", "bakery.json"); 
-    loadstoredata();
-    xhr.onload = function() { 
-        var jsondata = JSON.parse(xhr.responseText);
-        console.log(jsondata);
-        showData(jsondata);
-    }; 
-    xhr.onerror = function() { alert("ERROR!"); }; 
-    xhr.send();
+async function pageLoad (){
+
+    await loadstoredata();
+    let response = await fetch("/bakery", {
+        method: "GET",
+        cache: "no-cache",
+    });
+
+    const json = await response.json()
+    console.log(json)
+    showData(json);
+
 
     modalCart();
 }
@@ -26,7 +27,8 @@ function getCookie(name){
 }
 
 const loadstoredata = (async () => {
-	let response = await fetch("/loadstoredatainmsg");
+    let response = await fetch("/loadstoredatainmsg");
+    return true
 })
 
 function showData(data){
@@ -34,7 +36,8 @@ function showData(data){
     var post = document.querySelectorAll("#layer")
     var keys = Object.keys(data);
 
-    for(var i =0; i< keys.length;i++){
+    for (var i = 0; i < keys.length; i++){
+        console.log(data[keys[i]])
         var container = document.getElementById("layer");
         var div = document.createElement("div");
         div.className = "box" + " container" + " center";
@@ -51,8 +54,8 @@ function showData(data){
         // var shopIcon = document.createElement("i");
         var shopIcon = document.createElement("i");
 
-        imgpost.src = "pic/" + data[keys[i]].pic
-        header.innerHTML = data[keys[i]].name + "<br>" 
+        imgpost.src = "pic/" + data[keys[i]].img_item
+        header.innerHTML = data[keys[i]].item_name + "<br>" 
         description.innerHTML = data[keys[i]].description + "<br>" + "stock : " + data[keys[i]].stock;
         price.innerHTML = "price : " + data[keys[i]].price + "<br>" 
         plus.className = "button1"
@@ -66,8 +69,6 @@ function showData(data){
         shopIcon.src="pic/shopIcon.png"
         shopIcon.className = "fa-solid fa-cart-plus"
         addCart.id = "Item_" + i;
-        
-        // shopIcon.innerHTML = "Add to cart"
         
         container.appendChild(div)
         div.appendChild(imgpost)

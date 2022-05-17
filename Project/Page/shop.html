@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="main.css" type="text/css">
-	<script type="text/javascript" src="shopping.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/2a16a33740.js" crossorigin="anonymous"></script>
-
-</head>
-<body>
-    <div class="menu">
-
-    </div>
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <script type="text/javascript" src="shopping.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2a16a33740.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="menu"></div>
     <div class="sticky">
-    <img class="shelf">
+      <img class="shelf" />
     </div>
-		<div class="grid-container" id="layer">
-		</div>
-</body>
+
+    <div class="grid-container" id="layer"></div>
+
+    <div class="bottomright">
+      <div class="modalCart" id="myBtn">
+        <div class="center">
+          <img src="pic/shoppnigCart.png" class="shoppingCart" />
+        </div>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="center">
+          <h1 class="headCart">Shopping Cart</h1>
+        </div>
+
+        <div class="grid-container" id="layerCart"></div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -12,6 +12,7 @@ function pageLoad(){
     xhr.onerror = function() { alert("ERROR!"); }; 
     xhr.send();
 
+    modalCart();
 }
 
 function getCookie(name){
@@ -44,6 +45,7 @@ function showData(data){
         var minus = document.createElement("BUTTON");
         var plus = document.createElement("BUTTON");
         var field = document.createElement("INPUT");
+        field.value ="0"
         field.setAttribute("type", "text");
         var addCart = document.createElement("BUTTON");
         // var shopIcon = document.createElement("i");
@@ -116,4 +118,40 @@ const addcartto = (async (addCart,numberofitem) => {
             NumItem:numberofitem})
         });
 })
+
+
+function modalCart() {
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    btn.onclick = function () {
+        
+        modal.style.display = "block";
+        var container = document.getElementById("layerCart");
+        var div = document.createElement("div");
+        div.className = "box" + " container" + " center";
+        var header = document.createElement("h1");
+
+        header.innerHTML = "yoyo" 
+
+        container.appendChild(div)
+        div.appendChild(imgpost)
+        div.appendChild(header)
+    }
+
+// When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    }
+}
+
 

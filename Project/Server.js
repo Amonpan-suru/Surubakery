@@ -130,7 +130,7 @@ app.get('/loadstoredatainmsg', async (req, res) => {
         console.log("555");
     }
     console.log("Getcomplete")
-    return res.end;
+    return res.send(sedata);
 });
 
 const readjson = () => {

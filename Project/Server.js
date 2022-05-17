@@ -66,18 +66,10 @@ app.post('/regisDB', async (req,res) => {
         return res.redirect('register.html');
     }
 
-    // console.log(req.body.username);
-    // console.log(req.body.password);
-    // console.log(req.body.confirmpassword);
-
     let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, username VARCHAR(255), email VARCHAR(100),password VARCHAR(100),img VARCHAR(100))";
     let result = await queryDB(sql);
     sql = `INSERT INTO userInfo (username, email, password,img) VALUES ("${req.body.username}", "${req.body.email}", "${req.body.password}",'avatar.png')`;
     result = await queryDB(sql);
-
-    // let sql_msg = "CREATE TABLE IF NOT EXISTS msgInfo (msg_id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), message VARCHAR(100))";
-    // let result_msg = await queryDB(sql_msg);
-    // result_msg = await queryDB(sql_msg);
 
 
     console.log("New record created successfullyone");
@@ -92,6 +84,8 @@ app.post('/checkLogin',async (req,res) => {
     // return res.redirect('feed.html');
     // ถ้าเช็คแล้ว username และ password ไม่ถูกต้อง
     // return res.redirect('login.html?error=1')
+    let sql_loing = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, username VARCHAR(255), email VARCHAR(100),password VARCHAR(100),img VARCHAR(100))";
+    let result_loing = await queryDB(sql);
     let sql = `SELECT id, username, password, img FROM ${tablename}`;
     let result = await queryDB(sql);
     result = Object.assign({},result);

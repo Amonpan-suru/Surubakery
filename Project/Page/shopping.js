@@ -203,6 +203,14 @@ const deletecartdata = (async (id_delete) => {
         });
 })
 
+function loaduserpic(){
+    let userpic = document.getElementById("userpic");
+    let userimg = getCookie('img');
+	userpic.src = "img/"+userimg;
+	userpic.appendChild(temp);
+
+}
+
 
 function showCart(cart) {
     console.log("showcart")
@@ -260,6 +268,7 @@ function showCart(cart) {
         minus.id = "minusItem" + i;
         minus.innerHTML = "-";
         plus.innerHTML = "+";
+        close.id = cart[keys[i]].NameItem;
 
         container.appendChild(div)
         div.appendChild(divGrid)

@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-        callback(null, 'result/img/');
+        callback(null, 'Page/img/');
     },
 
     filename: (req, file, cb) => {
@@ -25,14 +25,14 @@ const storage = multer.diskStorage({
     }
 });
 
-// const imageFilter = (req, file, cb) => {
-//     // Accept images only
-//     if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-//         req.fileValidationError = 'Only image files are allowed!';
-//         return cb(new Error('Only image files are allowed!'), false);
-//     }
-//     cb(null, true);
-// };
+const imageFilter = (req, file, cb) => {
+    // Accept images only
+    if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+        req.fileValidationError = 'Only image files are allowed!';
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
 
 // ใส่ค่าตามที่เราตั้งไว้ใน mysql
 const con = mysql.createConnection({
@@ -58,6 +58,39 @@ const queryDB = (sql) => {
                 resolve(result)
         })
     })
+}
+
+app.post('/profilepic', (req,res) => {
+    let upload = multer({ storage: storage, fileFilter: imageFilter }).single('avatar');
+
+    upload(req, res, (err) => {
+
+        if (req.fileValidationError) {
+            return res.send(req.fileValidationError);
+        }
+        else if (!req.file) {
+            return res.send('Please select an image to upload');
+        }
+        else if (err instanceof multer.MulterError) {
+            return res.send(err);
+        }
+        else if (err) {
+            return res.send(err);
+        }
+        let username = req.cookies.username
+        updateImg(username,req.file.filename)
+        res.cookie('img' , req.file.filename);
+        return res.redirect('Profile.html')
+    });
+
+})
+
+const updateImg = async (username, filen) => {   
+    let sql = `UPDATE userInfo SET img = '${filen}' WHERE username = '${username}'`;
+    let result = await queryDB(sql);
+    console.log(filen);
+    console.log(username);
+    console.log(result);
 }
 
 app.post('/regisDB', async (req,res) => {

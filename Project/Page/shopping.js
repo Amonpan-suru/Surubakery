@@ -10,9 +10,12 @@ async function pageLoad (){
 
     const json = await response.json()
     console.log(json)
+
+    
+    var user = document.getElementById("user");
+    user.innerHTML = getCookie('username')
+    
     showData(json);
-
-
     modalCart();
 }
 

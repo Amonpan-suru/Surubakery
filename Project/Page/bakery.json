@@ -3,7 +3,7 @@
 		"name": "Brownie",
 		"price":"15",
 		"pic":"Brownie.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Worlds best brownies recipe! Perfect crisp crackly top, studded with melted chunks of chocolate",
 		"stock":"2/100"
 
 	},
@@ -12,7 +12,7 @@
 		"name": "Cake",
 		"price":"15",
 		"pic":"ChocolateCake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Fluffy, Spongy, and Moist. Delicious!",
 		"stock":"2/100"
 
 	},
@@ -21,7 +21,7 @@
 		"name": "Croissant",
 		"price":"15",
 		"pic":"Croissant.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Dough rolled-in fat layers to create a flaky, crispy texture and delicately sweet",
 		"stock":"2/100"
 
 	},
@@ -30,7 +30,7 @@
 		"name": "Chinese pastry",
 		"price":"7",
 		"pic":"ChinesePastry.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Chinese dessert with symbols of longevity, luck, prosperity, peace/safety and double happiness",
 		"stock":"2/100"
 
 	},
@@ -38,7 +38,7 @@
 		"name": "Strawberry cake",
 		"price":"7",
 		"pic":"StrawberryCake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A fluffy cake with strawberry, Everyone would like it",
 		"stock":"2/100"
 
 	},
@@ -46,105 +46,105 @@
 		"name": "Cookie",
 		"price":"7",
 		"pic":"Cookie.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Baked snacks, crispy, chewy, flat and sweet",
 		"stock":"2/100"
 	},
 	"top7":{
 		"name": "Orange cake",
 		"price":"7",
 		"pic":"OrangeCake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A fluffy cake with orange, Try once and you would buy again",
 		"stock":"2/100"
 	},
 	"top8":{
 		"name": "Cupcake",
 		"price":"7",
 		"pic":"Cupcake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Small, Tasty Snack cakes, many toppings to be chosen for you",
 		"stock":"2/100"
 	},
 	"top9":{
 		"name": "Taiyaki",
 		"price":"7",
 		"pic":"Taiyaki.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Japanese fish-shaped cake, as popular worldwide as Japanese snacks and Japanese candy are!",
 		"stock":"2/100"
 	},
 	"top10":{
 		"name": "Barguette",
 		"price":"7",
 		"pic":"Barguette.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A long, thin bread of French origin, distinguishable by its length and crisp crust",
 		"stock":"2/100"
 	},
 	"top11":{
 		"name": "Garric bread",
 		"price":"7",
 		"pic":"GarricBread.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A bread, topped with garlic and olive oil, additional herbs are allowed",
 		"stock":"2/100"
 	},
 	"top12":{
 		"name": "Banofee",
 		"price":"7",
 		"pic":"Banofee.png",
-        "description" : "super mother fucker delicious",
+        "description" : "British dessert pie made from bananas, cream and a thick caramel sauce",
 		"stock":"2/100"
 	},
 	"top13":{
 		"name": "Yakisoba bread",
 		"price":"7",
 		"pic":"YakisobBread.png",
-        "description" : "super mother fucker delicious",
+        "description" : "Japanese stir-fried noodle sandwich, called as Yakisoba Dog",
 		"stock":"2/100"
 	},
 	"top14":{
 		"name": "Roll cake",
 		"price":"7",
 		"pic":"RollCake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "fluffy and spongy cake, This chiffon-style cake is very versatile",
 		"stock":"2/100"
 	},
 	"top15":{
 		"name": "Pie apple",
 		"price":"7",
 		"pic":"PieApple.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A sweet dessert made from apples cooked under or inside pastry",
 		"stock":"2/100"
 	},
 	"top16":{
 		"name": "Melonpan",
 		"price":"7",
 		"pic":"Melonpan.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A sweet bun originating from Japan. Enriched dough covered in a thin layer of crisp cookie dough",
 		"stock":"2/100"
 	},
 	"top17":{
 		"name": "Honeytoast",
 		"price":"7",
 		"pic":"Honeytoast.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A Japanese dessert, hollowed bread brushing with butter and honey",
 		"stock":"2/100"
 	},
 	"top18":{
 		"name": "Pancake",
 		"price":"7",
 		"pic":"Pancake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "a flat, circular piece of cooked batter, usually eaten with butter and maple syrup.",
 		"stock":"2/100"
 	},
 	"top19":{
 		"name": "Tart egg",
 		"price":"7",
 		"pic":"TartEgg.png",
-        "description" : "super mother fucker delicious",
+        "description" : "A pastry consisting of a flaky outer shell with a creamy, but firm egg custard in the center",
 		"stock":"2/100"
 	},
 	"top20":{
 		"name": "Crepe cake",
 		"price":"7",
 		"pic":"CrepeCake.png",
-        "description" : "super mother fucker delicious",
+        "description" : "The layered of soft crepes, light and creamy whipped cream",
 		"stock":"2/100"
 	}
 }

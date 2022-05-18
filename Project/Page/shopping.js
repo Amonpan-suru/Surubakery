@@ -56,7 +56,7 @@ function showData(data){
 
         imgpost.src = "pic/" + data[keys[i]].img_item
         header.innerHTML = data[keys[i]].item_name + "<br>" 
-        description.innerHTML = data[keys[i]].description + "<br>" + "stock : " + data[keys[i]].stock;
+        description.innerHTML = data[keys[i]].description + "<br>"/* + "stock : " + data[keys[i]].stock*/;
         price.innerHTML = "price : " + data[keys[i]].price + "<br>" 
         plus.className = "button1"
         plus.id = "plusItem_" + i;
@@ -182,7 +182,9 @@ function edittocart(div, minus, plus, field, close) {
 
 async function loadcartdata(){
 
+    console.log("Loaddata")
 	let response = await fetch("/loadcartdatafromsql");
+    console.log("loadcomplete");
     let contant = await response.json();
     let cart = await showCart(JSON.parse(contant));
 
@@ -203,6 +205,7 @@ const deletecartdata = (async (id_delete) => {
 
 
 function showCart(cart) {
+    console.log("showcart")
     
     
     let keys = Object.keys(cart);
@@ -212,12 +215,12 @@ function showCart(cart) {
 
     var container = document.getElementById("layerCart");
     container.innerHTML = ""
-        
+    console.log("showcart1")
     for (var i = 0; i < keys.length ; i++) {
         var modal = document.getElementById("myModal");
-        console.log(cart[keys[i]].id);
-        console.log(cart[keys[i]].IMG_item);
-        console.log(cart[keys[i]]);
+        // console.log(cart[keys[i]].id);
+        // console.log(cart[keys[i]].IMG_item);
+        // console.log(cart[keys[i]]);
         
         var div = document.createElement("div");
         div.className = "boxCart"
@@ -242,7 +245,7 @@ function showCart(cart) {
         var minus = document.createElement("BUTTON");
         var plus = document.createElement("BUTTON");
         var field = document.createElement("INPUT");
-        field.value = "0"
+        field.value = "0"      
         field.setAttribute("type", "text");
         
 
@@ -274,5 +277,9 @@ function showCart(cart) {
 
         edittocart(div, minus, plus, field, close)
     }
+    var checkout = document.createElement("BUTTON");
+        checkout.className = "addToCart"
+        checkout.innerHTML = "Check Out"
+        div.appendChild(checkout);
 }
 

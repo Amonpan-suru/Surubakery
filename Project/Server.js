@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 const storage = multer.diskStorage({
     destination: (req, file, callback) => {
-      callback(null, 'result/img/');
+        callback(null, 'result/img/');
     },
 
     filename: (req, file, cb) => {
@@ -62,15 +62,14 @@ const queryDB = (sql) => {
 
 app.post('/regisDB', async (req,res) => {
 
-    if(req.body.password != req.body.confirmpassword){
-        return res.redirect('register.html');
+    if (req.body.password != req.body.confirmpassword) {
+        return res.redirect('register.html?error=1');
     }
 
     let sql = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, username VARCHAR(255), email VARCHAR(100),password VARCHAR(100),img VARCHAR(100))";
     let result = await queryDB(sql);
     sql = `INSERT INTO userInfo (username, email, password,img) VALUES ("${req.body.username}", "${req.body.email}", "${req.body.password}",'avatar.png')`;
     result = await queryDB(sql);
-
 
     console.log("New record created successfullyone");
     return res.redirect('login.html');

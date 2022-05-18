@@ -158,8 +158,9 @@ function edittocart(div, minus, plus, field, close) {
      minus.onclick = function(){
         if(numberofitem > 0 )
             numberofitem -= 1;      
-         document.getElementById(field.id).value = "22";
+         document.getElementById(field.id).value = numberofitem;
          console.log(numberofitem)
+         console.log(field.id)
     }
 
     plus.onclick = function(){
@@ -167,6 +168,7 @@ function edittocart(div, minus, plus, field, close) {
             numberofitem += 1;
         document.getElementById(field.id).value = numberofitem;
         console.log(numberofitem)
+        console.log(field.id)
     }
 
     close.onclick = function(){
@@ -215,10 +217,10 @@ function showCart() {
         header.innerHTML = "brownie"
         price.innerHTML = "Price : " + "20"
         plus.className = "button1"
-        plus.id = "plusItem_" + i;
+        plus.id = "plusItem" + i;
         minus.className = "button1"
-        field.id = "fieldItem_" + i;
-        minus.id = "minusItem_" + i;
+        field.id = "fieldItem" + i;
+        minus.id = "minusItem" + i;
         minus.innerHTML = "-";
         plus.innerHTML = "+";
 

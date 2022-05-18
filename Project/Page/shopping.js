@@ -10,9 +10,12 @@ async function pageLoad (){
 
     const json = await response.json()
     console.log(json)
+
+    
+    var user = document.getElementById("user");
+    user.innerHTML = getCookie('username')
+    
     showData(json);
-
-
     modalCart();
 }
 
@@ -48,8 +51,11 @@ function showData(data){
         var minus = document.createElement("BUTTON");
         var plus = document.createElement("BUTTON");
         var field = document.createElement("INPUT");
-        field.value ="0"
-        field.setAttribute("type", "text");
+        field.value ="1"
+        field.setAttribute("type", "number");
+        field.setAttribute("min", 1)
+        field.setAttribute("max", 99)
+
         var addCart = document.createElement("BUTTON");
         // var shopIcon = document.createElement("i");
         var shopIcon = document.createElement("i");
@@ -86,16 +92,18 @@ function showData(data){
 }
 
 function addtocart(addCart,minus,plus,field){
-    var numberofitem = 0;
-    addCart.onclick = function(){      
+    var numberofitem = 1;
+    addCart.onclick = function () {  
         numberofitem = document.getElementById(field.id).value;
-	    addcartto(addCart,numberofitem);
-        document.getElementById(field.id).value = "";
-        numberofitem = 0;
+        if (numberofitem > 0) {
+            addcartto(addCart,numberofitem);
+            document.getElementById(field.id).value = 1;
+            numberofitem = 1;
+        }
 	}
 
     minus.onclick = function(){
-        if(numberofitem > 0 )
+        if(numberofitem > 1 )
             numberofitem -= 1;      
         document.getElementById(field.id).value = numberofitem;
     }
@@ -150,7 +158,7 @@ function modalCart() {
     }
 }
 
-function edittocart(div, minus, plus, field, close) {
+function edittocart(div, minus, plus, field, close, total, price) {
     var numberofitem = 0;
     numberofitem = document.getElementById(field.id).value;
     numberofitem = Number(numberofitem)
@@ -158,17 +166,19 @@ function edittocart(div, minus, plus, field, close) {
      minus.onclick = function(){
         if(numberofitem > 0 )
             numberofitem -= 1;      
-         document.getElementById(field.id).value = numberofitem;
-         console.log(numberofitem)
-         console.log(field.id)
+        document.getElementById(field.id).value = numberofitem;
+        document.getElementById(total.id).innerHTML = "Total : " + (price * field.value) + " Bath";
+         //  console.log(numberofitem)
+        //  console.log(field.id)
     }
 
     plus.onclick = function(){
         if(numberofitem < 99)
             numberofitem += 1;
         document.getElementById(field.id).value = numberofitem;
-        console.log(numberofitem)
-        console.log(field.id)
+        document.getElementById(total.id).innerHTML = "Total : " + (price * field.value) + " Bath";
+        // console.log(numberofitem)
+        // console.log(field.id)
     }
 
     close.onclick = function(){
@@ -213,9 +223,9 @@ function loaduserpic(){
 
 
 function showCart(cart) {
-    console.log("showcart")
+    // console.log("showcart")
     
-    
+    let grandTotal = 0;
     let keys = Object.keys(cart);
     // console.log(cart[keys[0]]);
     // let img_show = cart[keys[i]].img_item;
@@ -247,25 +257,35 @@ function showCart(cart) {
         var imgpost = document.createElement("img");
         imgpost.className = "imgCart"
         var header = document.createElement("h2");
-        var pice = document.createElement("p");
         var price = document.createElement("p");
-
+        var total = document.createElement("p");
         var minus = document.createElement("BUTTON");
         var plus = document.createElement("BUTTON");
         var field = document.createElement("INPUT");
-        field.value = "0"      
-        field.setAttribute("type", "text");
+        
+
+        field.value = cart[keys[i]].Number_of_Item;    
+        field.setAttribute("type", "number");
+        field.setAttribute("min", 1)
+        field.setAttribute("max", 99)
+        var divTotal = document.createElement("div");
+        divTotal.className = "right" + " total"
+        total.className = "totalText"
+        
+
         
 
         imgpost.src = "pic/" + (cart[keys[i]].IMG_item);
         header.innerHTML = cart[keys[i]].NameItem;
-        
-        price.innerHTML = "Price : " + cart[keys[i]].price;
-        plus.className = "button1"
+        const eachPrice = cart[keys[i]].price;
+        price.innerHTML = "Price : " + eachPrice;
+        total.innerHTML = "Total : " + eachPrice * field.value + " Bath";
+        plus.className = "button2"
         plus.id = "plusItem" + i;
-        minus.className = "button1"
+        minus.className = "button2"
         field.id = "fieldItem" + i;
         minus.id = "minusItem" + i;
+        total.id = "total" + i;
         minus.innerHTML = "-";
         plus.innerHTML = "+";
         close.id = cart[keys[i]].NameItem;
@@ -277,18 +297,37 @@ function showCart(cart) {
         divGrid.appendChild(divText)
         divText.appendChild(close)
         divText.appendChild(header)
-        divText.appendChild(pice)
         divText.appendChild(price)
         divText.appendChild(minus)
         divText.appendChild(field)
         divText.appendChild(plus)
-        
+        divText.appendChild(divTotal)
+        divTotal.appendChild(total)
 
-        edittocart(div, minus, plus, field, close)
+        grandTotal += field.value * eachPrice;
+        edittocart(div, minus, plus, field, close, total, eachPrice)
     }
-    var checkout = document.createElement("BUTTON");
+
+    if (keys.length != 0) {
+        var checkout = document.createElement("BUTTON");
+        var allTotal = document.createElement("p");
+
         checkout.className = "addToCart"
         checkout.innerHTML = "Check Out"
-        div.appendChild(checkout);
+        allTotal.className = "totalText"
+        allTotal.id = "allTotal"
+        allTotal.innerHTML = grandTotal
+
+        container.appendChild(checkout);
+
+        checkout.onclick = function () {
+            document.getElementById("layerCart").innerHTML = "";
+            
+            for (var i = 0; i < keys.length; i++) {
+                deletecartdata(cart[keys[i]].NameItem)
+            }
+        }
+    }
+    
 }
 

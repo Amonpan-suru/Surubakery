@@ -38,7 +38,7 @@ const imageFilter = (req, file, cb) => {
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "@Karameet110TH",
+    password: "12345678",
     database: "project"
 })
 
@@ -277,7 +277,9 @@ app.post('/deletecartdatafromsql', async (req, res) => {
     // let result = await queryDB(sql_cartdata);
     
     let sql_delete = `DELETE FROM ${user}_Incart WHERE NameItem = '${data.id}'`;
-    sql_delete = await queryDB (sql_delete);
+    console.log('sql_delete1' , sql_delete)
+    sql_delete = await queryDB(sql_delete);
+    console.log('sql_delete2' , sql_delete)
     res.send({
         success:true
     })

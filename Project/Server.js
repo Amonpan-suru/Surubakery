@@ -139,7 +139,7 @@ const readjson = () => {
           if(err)
             reject(err);
           else{
-            resolve(data);syt
+            resolve(data);
           }
         });
     })

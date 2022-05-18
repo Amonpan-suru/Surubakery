@@ -3,7 +3,7 @@
 		"name": "Brownie",
 		"price":"15",
 		"pic":"Brownie.png",
-        "description" : "Worlds best brownies recipe! Perfect crisp crackly top, studded with melted chunks of chocolate",
+        "description" : "Best brownies recipe! Perfect crisp crackly top with melted chunks of chocolate",
 		"stock":"2/100"
 
 	},
@@ -12,7 +12,7 @@
 		"name": "Cake",
 		"price":"15",
 		"pic":"ChocolateCake.png",
-        "description" : "Fluffy, Spongy, and Moist. Delicious!",
+        "description" : "Fluffy, Spongy, and Moist, Moreover it's very Delicious!",
 		"stock":"2/100"
 
 	},
@@ -30,7 +30,7 @@
 		"name": "Chinese pastry",
 		"price":"7",
 		"pic":"ChinesePastry.png",
-        "description" : "Chinese dessert with symbols of longevity, luck, prosperity, peace/safety and double happiness",
+        "description" : "Chinese dessert with symbols of longevity, luck, prosperity, peace and happiness",
 		"stock":"2/100"
 
 	},
@@ -46,7 +46,7 @@
 		"name": "Cookie",
 		"price":"7",
 		"pic":"Cookie.png",
-        "description" : "Baked snacks, crispy, chewy, flat and sweet",
+        "description" : "The Baking snacks, crispy, chewy, flat and sweet. Suits for everyone",
 		"stock":"2/100"
 	},
 	"top7":{
@@ -67,14 +67,14 @@
 		"name": "Taiyaki",
 		"price":"7",
 		"pic":"Taiyaki.png",
-        "description" : "Japanese fish-shaped cake, as popular worldwide as Japanese snacks and Japanese candy are!",
+        "description" : "Japanese fish-shaped cake, popular around the world as this store is",
 		"stock":"2/100"
 	},
 	"top10":{
 		"name": "Barguette",
 		"price":"7",
 		"pic":"Barguette.png",
-        "description" : "A long, thin bread of French origin, distinguishable by its length and crisp crust",
+        "description" : "A long bread of French origin, distinguishable by its length and crisp crust",
 		"stock":"2/100"
 	},
 	"top11":{
@@ -102,7 +102,7 @@
 		"name": "Roll cake",
 		"price":"7",
 		"pic":"RollCake.png",
-        "description" : "fluffy and spongy cake, This chiffon-style cake is very versatile",
+        "description" : "A Fluffy and spongy cake, This chiffon-style cake is very versatile",
 		"stock":"2/100"
 	},
 	"top15":{
@@ -116,7 +116,7 @@
 		"name": "Melonpan",
 		"price":"7",
 		"pic":"Melonpan.png",
-        "description" : "A sweet bun originating from Japan. Enriched dough covered in a thin layer of crisp cookie dough",
+        "description" : "A sweet bun from Japan. Enriched dough covered in a layer of crisp cookie dough",
 		"stock":"2/100"
 	},
 	"top17":{
@@ -130,14 +130,14 @@
 		"name": "Pancake",
 		"price":"7",
 		"pic":"Pancake.png",
-        "description" : "a flat, circular piece of cooked batter, usually eaten with butter and maple syrup.",
+        "description" : "A flat, Circular piece of cooked batter, eaten with butter and maple syrup",
 		"stock":"2/100"
 	},
 	"top19":{
-		"name": "Tart egg",
+		"name": "Egg Tart",
 		"price":"7",
 		"pic":"TartEgg.png",
-        "description" : "A pastry consisting of a flaky outer shell with a creamy, but firm egg custard in the center",
+        "description" : "A pastry consists of a flaky outer shell with a creamy egg custard in center",
 		"stock":"2/100"
 	},
 	"top20":{

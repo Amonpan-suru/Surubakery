@@ -104,6 +104,7 @@ function addtocart(addCart,minus,plus,field){
         if(numberofitem < 99)
             numberofitem += 1;
         document.getElementById(field.id).value = numberofitem;
+    console.log(numberofitem)
     }
 }
 
@@ -129,19 +130,13 @@ function modalCart() {
     var span = document.getElementsByClassName("close")[0];
     
     btn.onclick = function () {
-        
-        modal.style.display = "block";
         var container = document.getElementById("layerCart");
-        var div = document.createElement("div");
-        div.className = "box" + " container" + " center";
-        var header = document.createElement("h1");
-
-        header.innerHTML = "yoyo" 
-
-        container.appendChild(div)
-        div.appendChild(imgpost)
-        div.appendChild(header)
+        container.innerHTML = ""
+        modal.style.display = "block";
+        showCart()
     }
+
+
 
 // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
@@ -155,4 +150,93 @@ function modalCart() {
     }
 }
 
+function edittocart(div, minus, plus, field, close) {
+    var numberofitem = 0;
+    numberofitem = document.getElementById(field.id).value;
+    numberofitem = Number(numberofitem)
+    
+     minus.onclick = function(){
+        if(numberofitem > 0 )
+            numberofitem -= 1;      
+         document.getElementById(field.id).value = "22";
+         console.log(numberofitem)
+    }
+
+    plus.onclick = function(){
+        if(numberofitem < 99)
+            numberofitem += 1;
+        document.getElementById(field.id).value = numberofitem;
+        console.log(numberofitem)
+    }
+
+    close.onclick = function(){
+        document.getElementById(div.id).innerHTML = "";
+        document.getElementById(div.id).className = "";
+    }
+}
+
+function showCart() {
+    
+    var container = document.getElementById("layerCart");
+    container.innerHTML = ""
+        
+    for (var i = 0; i < 3; i++) {
+        var modal = document.getElementById("myModal");
+            
+        
+        var div = document.createElement("div");
+        div.className = "boxCart"
+        div.id = "cart" + i
+        var close = document.createElement("span");
+        close.className = "close"
+        close.innerHTML = "&times;"
+        var divGrid = document.createElement("div");
+        divGrid.className = "containerCart"
+        var divImg = document.createElement("div");
+        divImg.className = "imgcontainerCart"
+
+        var divText = document.createElement("div");
+        divText.className = "textcontainerCart"
+
+        var imgpost = document.createElement("img");
+        imgpost.className = "imgCart"
+        var header = document.createElement("h2");
+        var pice = document.createElement("p");
+        var price = document.createElement("p");
+
+        var minus = document.createElement("BUTTON");
+        var plus = document.createElement("BUTTON");
+        var field = document.createElement("INPUT");
+        field.value = "0"
+        field.setAttribute("type", "text");
+        
+
+        imgpost.src = "pic/brownie.png"
+        header.innerHTML = "brownie"
+        price.innerHTML = "Price : " + "20"
+        plus.className = "button1"
+        plus.id = "plusItem_" + i;
+        minus.className = "button1"
+        field.id = "fieldItem_" + i;
+        minus.id = "minusItem_" + i;
+        minus.innerHTML = "-";
+        plus.innerHTML = "+";
+
+        container.appendChild(div)
+        div.appendChild(divGrid)
+        divGrid.appendChild(divImg)
+        divImg.appendChild(imgpost)
+        divGrid.appendChild(divText)
+        divText.appendChild(close)
+        divText.appendChild(header)
+        divText.appendChild(pice)
+        divText.appendChild(price)
+        divText.appendChild(minus)
+        divText.appendChild(field)
+        divText.appendChild(plus)
+        
+
+        edittocart(div, minus, plus, field, close)
+    }
+}
 

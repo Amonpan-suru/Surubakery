@@ -6,6 +6,12 @@ body {
     background-size: cover;
 }
 
+#errordisplay {
+  /*margin-top: -20px;*/
+  font-size: 12px;
+  color: #EE0019;
+}
+
 .formBox {
     background-color: rgb(255, 255, 255);
       box-shadow: 0px 4px 15px rgba(167, 188, 207, 0.5);

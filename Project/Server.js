@@ -105,14 +105,14 @@ app.post('/checkLogin',async (req,res) => {
             res.cookie('img', temp.img);
         }
     }
-    if(isCorrect = true){
+    if(isCorrect == true){
         console.log("Correct");
         return res.redirect('shop.html');
         // return res.redirect('register.html');
     }
     else{
         console.log("Wrong");
-        return res.redirect('index.html?error=1');
+        return res.redirect('login.html?error=1');
     }
 })
 
@@ -217,6 +217,11 @@ app.post('/addtocart', async (req, res) => {
     }      
 });
 
+app.get('/logout', (req,res) => {
+    res.clearCookie('username');
+    res.clearCookie('img');
+    return res.redirect('login.html');
+})
 
 app.listen(port, hostname, () => {
     console.log(`Server running at   http://${hostname}:${port}/login.html`);

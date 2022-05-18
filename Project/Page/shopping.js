@@ -56,7 +56,7 @@ function showData(data){
 
         imgpost.src = "pic/" + data[keys[i]].img_item
         header.innerHTML = data[keys[i]].item_name + "<br>" 
-        description.innerHTML = data[keys[i]].description + "<br>" + "stock : " + data[keys[i]].stock;
+        description.innerHTML = data[keys[i]].description + "<br>"/* + "stock : " + data[keys[i]].stock*/;
         price.innerHTML = "price : " + data[keys[i]].price + "<br>" 
         plus.className = "button1"
         plus.id = "plusItem_" + i;
@@ -243,7 +243,7 @@ function showCart(cart) {
         var minus = document.createElement("BUTTON");
         var plus = document.createElement("BUTTON");
         var field = document.createElement("INPUT");
-        field.value = "0"
+        field.value = "0"      
         field.setAttribute("type", "text");
         
 
@@ -276,5 +276,9 @@ function showCart(cart) {
 
         edittocart(div, minus, plus, field, close)
     }
+    var checkout = document.createElement("BUTTON");
+        checkout.className = "addToCart"
+        checkout.innerHTML = "Check Out"
+        div.appendChild(checkout);
 }
 

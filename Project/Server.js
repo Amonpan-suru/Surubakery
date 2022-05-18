@@ -118,7 +118,7 @@ app.post('/checkLogin',async (req,res) => {
 
 app.get('/loadstoredatainmsg', async (req, res) => {
 
-    let sql_storedata = "CREATE TABLE IF NOT EXISTS storedata (store_id INT AUTO_INCREMENT PRIMARY KEY, item_name VARCHAR(255), price INT, stock INT,img_item VARCHAR(255))"
+    let sql_storedata = "CREATE TABLE IF NOT EXISTS storedata (store_id INT AUTO_INCREMENT PRIMARY KEY, item_name VARCHAR(255), price INT, description VARCHAR(255),img_item VARCHAR(255))"
     let result_storedata = await queryDB(sql_storedata);
     result_storedata = await queryDB(sql_storedata);
     // sql_storedata = `SELECT item_name FROM ${tablename_storedata}`;
@@ -127,7 +127,7 @@ app.get('/loadstoredatainmsg', async (req, res) => {
 
     if(sedata == ''){
         readjson().then(Updatestore).then((out) => out);
-        console.log("555");
+        
     }
     console.log("Getcomplete")
     return res.send(sedata);
@@ -139,7 +139,7 @@ const readjson = () => {
           if(err)
             reject(err);
           else{
-            resolve(data);
+            resolve(data);syt
           }
         });
     })
@@ -150,11 +150,11 @@ const Updatestore =  (data) =>{
           var storejson = JSON.parse(data);
           var keys = Object.keys(storejson);
 
-          let sql_storedata =  `SELECT item_name, price ,stock ,img_item FROM storedata`;
+          let sql_storedata =  `SELECT item_name, price ,description ,img_item FROM storedata`;
           sql_storedata =  queryDB(sql_storedata);
           for(i = 0;i < keys.length; i ++ ){
               
-            let sql_storedata =  `INSERT INTO storedata (item_name, price, stock,img_item) VALUES ("${storejson[keys[i]].name}", "${storejson[keys[i]].price}","${storejson[keys[i]].stock}","${storejson[keys[i]].pic}")`; 
+            let sql_storedata =  `INSERT INTO storedata (item_name, price, description,img_item) VALUES ("${storejson[keys[i]].name}", "${storejson[keys[i]].price}","${storejson[keys[i]].description}","${storejson[keys[i]].pic}")`; 
             sql_storedata =  queryDB(sql_storedata);          
         }
         resolve(sql_storedata);
@@ -162,7 +162,7 @@ const Updatestore =  (data) =>{
 }
 
 app.get('/bakery', async (req, res) => {
-    const query = `SELECT store_id ,item_name, price ,stock ,img_item FROM storedata`
+    const query = `SELECT store_id ,item_name, price ,description ,img_item FROM storedata`
     let data = await queryDB(query)
     // console.log(data)
     data = Object.assign({},data);
@@ -171,6 +171,7 @@ app.get('/bakery', async (req, res) => {
 })
 
 app.post('/addtocart', async (req, res) => {
+
     const data = req.body;
     const user = req.cookies.username;
     let conid = data.Itemid;
@@ -184,12 +185,13 @@ app.post('/addtocart', async (req, res) => {
     id = id+1;
 
     let sql_Incart = `CREATE TABLE IF NOT EXISTS ${user}_Incart (item int AUTO_INCREMENT PRIMARY KEY,id int, NameItem VARCHAR(255),price int,Number_of_Item INT,IMG_Item VARCHAR(255))`
-    sql_Incart = queryDB(sql_Incart);
-    let sql_storedata = `SELECT store_id ,item_name, price ,stock ,img_item FROM storedata WHERE store_id = '${id}'`
+    sql_Incart = await queryDB(sql_Incart);
+    let sql_storedata = `SELECT store_id ,item_name, price ,description ,img_item FROM storedata WHERE store_id = '${id}'`
     sql_storedata = await queryDB(sql_storedata);
 
     let result = Object.assign({},sql_storedata);
     let obj = Object.keys(result);
+    console.log(result);
 
     // console.log(data.NumItem);
     sql_Incart = `SELECT id FROM ${user}_Incart`
@@ -214,24 +216,24 @@ app.post('/addtocart', async (req, res) => {
             let sql_updatecart = `INSERT INTO ${user}_Incart (id , NameItem, price, Number_of_Item, IMG_item) VALUES ("${id}","${result[obj[0]].item_name}","${result[obj[0]].price}","${data.NumItem}","${result[obj[0]].img_item}")`;
             sql_updatecart = await queryDB(sql_updatecart);
         }
-    }      
+    }  
+    res.send({
+        success:true
+    })
+    
 });
 
 app.get('/loadcartdatafromsql', async (req, res) => {
-    console.log("step1");
+    
     const user = req.cookies.username;
-    console.log("step2");
     let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
-    console.log("step3");
     let result = await queryDB(sql_cartdata);
-    console.log("step4");
     // console.log(result);
     result = Object.assign({},result);
-    console.log("step5");
     var cartdata = await JSON.stringify(result);
-    console.log("step6");
-    // console.log(cartdata);
-    await res.json(cartdata)
+    console.log(cartdata);
+    res.json(cartdata)
+    // res.send(cartdata)
 })
 
 app.post('/deletecartdatafromsql', async (req, res) => {
@@ -244,6 +246,9 @@ app.post('/deletecartdatafromsql', async (req, res) => {
     
     let sql_delete = `DELETE FROM ${user}_Incart WHERE NameItem = '${data.id}'`;
     sql_delete = await queryDB (sql_delete);
+    res.send({
+        success:true
+    })
 })
 
 app.get('/logout', (req,res) => {

@@ -158,7 +158,8 @@ function edittocart(div, minus, plus, field, close) {
      minus.onclick = function(){
         if(numberofitem > 0 )
             numberofitem -= 1;      
-         document.getElementById(field.id).value = "22";
+         document.getElementById(field.id).value = numberofitem;
+         console.log(numberofitem)
          console.log(field.id)
     }
 
@@ -166,6 +167,7 @@ function edittocart(div, minus, plus, field, close) {
         if(numberofitem < 99)
             numberofitem += 1;
         document.getElementById(field.id).value = numberofitem;
+        console.log(numberofitem)
         console.log(field.id)
     }
 
@@ -249,11 +251,10 @@ function showCart(cart) {
         
         price.innerHTML = "Price : " + cart[keys[i]].price;
         plus.className = "button1"
-        plus.id = "plusItem_" + i;
+        plus.id = "plusItem" + i;
         minus.className = "button1"
-        field.id = "fieldItem_" + i;
-        minus.id = "minusItem_" + i;
-        close.id = cart[keys[i]].NameItem;
+        field.id = "fieldItem" + i;
+        minus.id = "minusItem" + i;
         minus.innerHTML = "-";
         plus.innerHTML = "+";
 

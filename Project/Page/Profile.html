@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
     <link rel="stylesheet" href="login.css" type="text/css" />
-    <script type="text/javascript" src="register.js"></script>
-    <title>Document</title>
+    <script type="text/javascript" src="login.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,27 +24,28 @@
     <div class="center">
       <div id="container" class="formBox">
         <div>
-          <a href="login.html"><img src="pic/back.png" class="icon" /></a>
-          <div class="centerText">
-            <h1>Register</h1>
-          </div>
+          <a href="shop.html"><img src="pic/back.png" class="icon" /></a>
+          <span class="centerText"><h1>Profile</h1></span>
         </div>
 
+        <div class="centerText">
+          <img src="pic/user.png" class="profileImg" /><br />
+        </div>
         <br />
         <form
           class="form"
-          action="/regisDB"
+          action="/checkLogin"
           method="post"
           accept-charset="utf-8"
         >
-          Username
-          <input
+          Username<input
             type="text"
             name="username"
             value=""
             placeholder=""
             required
           /><br />
+
           E-mail
           <input
             type="text"
@@ -53,25 +54,19 @@
             placeholder=""
             required
           /><br />
-          Password
+
+          New Password
           <input
             type="password"
             name="password"
             value=""
             placeholder=""
-          /><br />
-          Confirm Password
-          <input
-            type="password"
-            name="confirmpassword"
-            value=""
-            placeholder=""
+            required
           /><br />
           <span id="errordisplay"></span><br />
-          <br />
 
           <div class="centerText">
-            <input type="submit" name="submit" value="Register" />
+            <input type="submit" value="Save" />
           </div>
         </form>
       </div>

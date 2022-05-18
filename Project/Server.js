@@ -191,7 +191,7 @@ app.post('/addtocart', async (req, res) => {
     let result = Object.assign({},sql_storedata);
     let obj = Object.keys(result);
 
-    console.log(data.NumItem);
+    // console.log(data.NumItem);
     sql_Incart = `SELECT id FROM ${user}_Incart`
     sql_Incart = await queryDB(sql_Incart);
 
@@ -218,14 +218,20 @@ app.post('/addtocart', async (req, res) => {
 });
 
 app.get('/loadcartdatafromsql', async (req, res) => {
+    console.log("step1");
     const user = req.cookies.username;
+    console.log("step2");
     let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
+    console.log("step3");
     let result = await queryDB(sql_cartdata);
+    console.log("step4");
     // console.log(result);
     result = Object.assign({},result);
+    console.log("step5");
     var cartdata = await JSON.stringify(result);
+    console.log("step6");
     // console.log(cartdata);
-    res.json(cartdata)
+    await res.json(cartdata)
 })
 
 app.post('/deletecartdatafromsql', async (req, res) => {
@@ -233,9 +239,11 @@ app.post('/deletecartdatafromsql', async (req, res) => {
     let id_delete = data.id;
     console.log(id_delete);
     const user = req.cookies.username;
-    let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
-    let result = await queryDB(sql_cartdata);
+    // let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
+    // let result = await queryDB(sql_cartdata);
     
+    let sql_delete = `DELETE FROM ${user}_Incart WHERE NameItem = '${data.id}'`;
+    sql_delete = await queryDB (sql_delete);
 })
 
 app.get('/logout', (req,res) => {

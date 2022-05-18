@@ -180,7 +180,9 @@ function edittocart(div, minus, plus, field, close) {
 
 async function loadcartdata(){
 
+    console.log("Loaddata")
 	let response = await fetch("/loadcartdatafromsql");
+    console.log("loadcomplete");
     let contant = await response.json();
     let cart = await showCart(JSON.parse(contant));
 
@@ -201,6 +203,7 @@ const deletecartdata = (async (id_delete) => {
 
 
 function showCart(cart) {
+    console.log("showcart")
     
     
     let keys = Object.keys(cart);
@@ -210,12 +213,12 @@ function showCart(cart) {
 
     var container = document.getElementById("layerCart");
     container.innerHTML = ""
-        
+    console.log("showcart1")
     for (var i = 0; i < keys.length ; i++) {
         var modal = document.getElementById("myModal");
-        console.log(cart[keys[i]].id);
-        console.log(cart[keys[i]].IMG_item);
-        console.log(cart[keys[i]]);
+        // console.log(cart[keys[i]].id);
+        // console.log(cart[keys[i]].IMG_item);
+        // console.log(cart[keys[i]]);
         
         var div = document.createElement("div");
         div.className = "boxCart"

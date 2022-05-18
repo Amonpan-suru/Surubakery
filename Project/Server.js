@@ -108,8 +108,19 @@ app.post('/regisDB', async (req,res) => {
     return res.redirect('login.html');
     
 })
+app.post('/chanepass', async (req,res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const email = req.body.email;
+    const user = req.cookies.username;
 
-let tablename = "userInfo";
+    let sql_change = `UPDATE userInfo SET username = '${username}', password = '${password}', email = '${email}' WHERE username ='${user}'`;
+    sql_change = await queryDB(sql_change);
+
+   res.cookie('username',username);
+   return res.redirect('Profile.html')
+})
+
 //ทำให้สมบูรณ์
 app.post('/checkLogin',async (req,res) => {
     // ถ้าเช็คแล้ว username และ password ถูกต้อง
@@ -117,7 +128,7 @@ app.post('/checkLogin',async (req,res) => {
     // ถ้าเช็คแล้ว username และ password ไม่ถูกต้อง
     // return res.redirect('login.html?error=1')
     let sql_loing = "CREATE TABLE IF NOT EXISTS userInfo (id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, username VARCHAR(255), email VARCHAR(100),password VARCHAR(100),img VARCHAR(100))";
-    let sql = `SELECT id, username, password, img FROM ${tablename}`;
+    let sql = `SELECT id, username, password, img FROM userInfo`;
 
     let result = await queryDB(sql);
     result = Object.assign({},result);

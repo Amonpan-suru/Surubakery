@@ -133,7 +133,7 @@ function modalCart() {
         var container = document.getElementById("layerCart");
         container.innerHTML = ""
         modal.style.display = "block";
-        showCart()
+        loadcartdata(); 
     }
 
 
@@ -159,30 +159,63 @@ function edittocart(div, minus, plus, field, close) {
         if(numberofitem > 0 )
             numberofitem -= 1;      
          document.getElementById(field.id).value = "22";
-         console.log(numberofitem)
+         console.log(field.id)
     }
 
     plus.onclick = function(){
         if(numberofitem < 99)
             numberofitem += 1;
         document.getElementById(field.id).value = numberofitem;
-        console.log(numberofitem)
+        console.log(field.id)
     }
 
     close.onclick = function(){
+        let id_delete = close.id;
+        deletecartdata(id_delete);
         document.getElementById(div.id).innerHTML = "";
         document.getElementById(div.id).className = "";
+        
     }
 }
 
-function showCart() {
+async function loadcartdata(){
+
+	let response = await fetch("/loadcartdatafromsql");
+    let contant = await response.json();
+    let cart = await showCart(JSON.parse(contant));
+
+}
+
+const deletecartdata = (async (id_delete) => {
+	let response = await fetch("/deletecartdatafromsql", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id:id_delete
+            })
+        });
+})
+
+
+function showCart(cart) {
     
+    
+    let keys = Object.keys(cart);
+    // console.log(cart[keys[0]]);
+    // let img_show = cart[keys[i]].img_item;
+    // alert(img_show);
+
     var container = document.getElementById("layerCart");
     container.innerHTML = ""
         
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < keys.length ; i++) {
         var modal = document.getElementById("myModal");
-            
+        console.log(cart[keys[i]].id);
+        console.log(cart[keys[i]].IMG_item);
+        console.log(cart[keys[i]]);
         
         var div = document.createElement("div");
         div.className = "boxCart"
@@ -211,14 +244,16 @@ function showCart() {
         field.setAttribute("type", "text");
         
 
-        imgpost.src = "pic/brownie.png"
-        header.innerHTML = "brownie"
-        price.innerHTML = "Price : " + "20"
+        imgpost.src = "pic/" + (cart[keys[i]].IMG_item);
+        header.innerHTML = cart[keys[i]].NameItem;
+        
+        price.innerHTML = "Price : " + cart[keys[i]].price;
         plus.className = "button1"
         plus.id = "plusItem_" + i;
         minus.className = "button1"
         field.id = "fieldItem_" + i;
         minus.id = "minusItem_" + i;
+        close.id = cart[keys[i]].NameItem;
         minus.innerHTML = "-";
         plus.innerHTML = "+";
 

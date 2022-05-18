@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
 const con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "12345678",
+    password: "@Karameet110TH",
     database: "project"
 })
 
@@ -164,7 +164,7 @@ const Updatestore =  (data) =>{
 app.get('/bakery', async (req, res) => {
     const query = `SELECT store_id ,item_name, price ,stock ,img_item FROM storedata`
     let data = await queryDB(query)
-    console.log(data)
+    // console.log(data)
     data = Object.assign({},data);
     var Json = JSON.stringify(data);
     res.send(Json)
@@ -216,6 +216,27 @@ app.post('/addtocart', async (req, res) => {
         }
     }      
 });
+
+app.get('/loadcartdatafromsql', async (req, res) => {
+    const user = req.cookies.username;
+    let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
+    let result = await queryDB(sql_cartdata);
+    // console.log(result);
+    result = Object.assign({},result);
+    var cartdata = await JSON.stringify(result);
+    // console.log(cartdata);
+    res.json(cartdata)
+})
+
+app.post('/deletecartdatafromsql', async (req, res) => {
+    const data = req.body;
+    let id_delete = data.id;
+    console.log(id_delete);
+    const user = req.cookies.username;
+    let sql_cartdata = `SELECT id , NameItem,price,Number_of_Item,IMG_item FROM ${user}_Incart`
+    let result = await queryDB(sql_cartdata);
+    
+})
 
 app.get('/logout', (req,res) => {
     res.clearCookie('username');

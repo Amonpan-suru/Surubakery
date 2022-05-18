@@ -90,6 +90,13 @@ input[type=text], input[type=password], select {
   .centerText{
     text-align: center;
 }
+
+.profileImg{
+width: 200px;
+height: 200px;
+border-radius: 50%;
+}
+
     @media screen and (max-width: 684px) {
 .formBox {
     width: 350px;

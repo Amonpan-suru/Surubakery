@@ -14,6 +14,7 @@ async function pageLoad (){
     
     var user = document.getElementById("user");
     user.innerHTML = getCookie('username')
+
     showImg('img/'+getCookie('img'));
     showData(json);
     modalCart();
@@ -229,7 +230,6 @@ function loaduserpic(){
     let userimg = getCookie('img');
 	userpic.src = "img/"+userimg;
 	userpic.appendChild(temp);
-
 }
 
 
@@ -245,6 +245,7 @@ function showCart(cart) {
     var container = document.getElementById("layerCart");
     container.innerHTML = ""
     console.log("showcart1")
+    
     for (var i = 0; i < keys.length ; i++) {
         var modal = document.getElementById("myModal");
         // console.log(cart[keys[i]].id);

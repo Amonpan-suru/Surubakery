@@ -14,7 +14,8 @@ async function pageLoad (){
     
     var user = document.getElementById("user");
     user.innerHTML = getCookie('username')
-    
+
+    showImg('img/'+getCookie('img'));
     showData(json);
     modalCart();
 }
@@ -33,6 +34,13 @@ const loadstoredata = (async () => {
     let response = await fetch("/loadstoredatainmsg");
     return true
 })
+
+function showImg(filename) {
+    if (filename !== "") {
+        var showpic = document.getElementById('showProfileIcon');
+        showpic.src = filename;
+    }
+}
 
 function showData(data){
 	console.log(Object.keys(data).length);
@@ -321,5 +329,7 @@ function showCart(cart) {
         }
     }
     
+
 }
+
 

@@ -10,7 +10,7 @@
 
 	"top2":{
 		"name": "Cake",
-		"price":"15",
+		"price":"40",
 		"pic":"ChocolateCake.png",
         "description" : "Fluffy, Spongy, and Moist, Moreover it's very Delicious!",
 		"stock":"2/100"
@@ -36,7 +36,7 @@
 	},
 	"top5":{
 		"name": "Strawberry cake",
-		"price":"7",
+		"price":"45",
 		"pic":"StrawberryCake.png",
         "description" : "A fluffy cake with strawberry, Everyone would like it",
 		"stock":"2/100"
@@ -44,105 +44,105 @@
 	},
 	"top6":{
 		"name": "Cookie",
-		"price":"7",
+		"price":"25",
 		"pic":"Cookie.png",
         "description" : "The Baking snacks, crispy, chewy, flat and sweet. Suits for everyone",
 		"stock":"2/100"
 	},
 	"top7":{
 		"name": "Orange cake",
-		"price":"7",
+		"price":"35",
 		"pic":"OrangeCake.png",
         "description" : "A fluffy cake with orange, Try once and you would buy again",
 		"stock":"2/100"
 	},
 	"top8":{
 		"name": "Cupcake",
-		"price":"7",
+		"price":"25",
 		"pic":"Cupcake.png",
         "description" : "Small, Tasty Snack cakes, many toppings to be chosen for you",
 		"stock":"2/100"
 	},
 	"top9":{
 		"name": "Taiyaki",
-		"price":"7",
+		"price":"25",
 		"pic":"Taiyaki.png",
         "description" : "Japanese fish-shaped cake, popular around the world as this store is",
 		"stock":"2/100"
 	},
 	"top10":{
 		"name": "Barguette",
-		"price":"7",
+		"price":"40",
 		"pic":"Barguette.png",
         "description" : "A long bread of French origin, distinguishable by its length and crisp crust",
 		"stock":"2/100"
 	},
 	"top11":{
 		"name": "Garric bread",
-		"price":"7",
+		"price":"45",
 		"pic":"GarricBread.png",
         "description" : "A bread, topped with garlic and olive oil, additional herbs are allowed",
 		"stock":"2/100"
 	},
 	"top12":{
 		"name": "Banofee",
-		"price":"7",
+		"price":"60",
 		"pic":"Banofee.png",
         "description" : "British dessert pie made from bananas, cream and a thick caramel sauce",
 		"stock":"2/100"
 	},
 	"top13":{
 		"name": "Yakisoba bread",
-		"price":"7",
+		"price":"55",
 		"pic":"YakisobBread.png",
         "description" : "Japanese stir-fried noodle sandwich, called as Yakisoba Dog",
 		"stock":"2/100"
 	},
 	"top14":{
 		"name": "Roll cake",
-		"price":"7",
+		"price":"25",
 		"pic":"RollCake.png",
         "description" : "A Fluffy and spongy cake, This chiffon-style cake is very versatile",
 		"stock":"2/100"
 	},
 	"top15":{
 		"name": "Pie apple",
-		"price":"7",
+		"price":"100",
 		"pic":"PieApple.png",
         "description" : "A sweet dessert made from apples cooked under or inside pastry",
 		"stock":"2/100"
 	},
 	"top16":{
 		"name": "Melonpan",
-		"price":"7",
+		"price":"35",
 		"pic":"Melonpan.png",
         "description" : "A sweet bun from Japan. Enriched dough covered in a layer of crisp cookie dough",
 		"stock":"2/100"
 	},
 	"top17":{
 		"name": "Honeytoast",
-		"price":"7",
+		"price":"100",
 		"pic":"Honeytoast.png",
         "description" : "A Japanese dessert, hollowed bread brushing with butter and honey",
 		"stock":"2/100"
 	},
 	"top18":{
 		"name": "Pancake",
-		"price":"7",
+		"price":"75",
 		"pic":"Pancake.png",
         "description" : "A flat, Circular piece of cooked batter, eaten with butter and maple syrup",
 		"stock":"2/100"
 	},
 	"top19":{
 		"name": "Egg Tart",
-		"price":"7",
+		"price":"25",
 		"pic":"TartEgg.png",
         "description" : "A pastry consists of a flaky outer shell with a creamy egg custard in center",
 		"stock":"2/100"
 	},
 	"top20":{
 		"name": "Crepe cake",
-		"price":"7",
+		"price":"30",
 		"pic":"CrepeCake.png",
         "description" : "The layered of soft crepes, light and creamy whipped cream",
 		"stock":"2/100"

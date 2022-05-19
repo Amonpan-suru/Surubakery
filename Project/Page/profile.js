@@ -37,6 +37,7 @@ function showImg(filename){
 		showpic.innerHTML = "";
 		var temp = document.createElement("img");
 		temp.src = filename;
+		temp.className = "profileImg";
 		showpic.appendChild(temp);
 	}
 }

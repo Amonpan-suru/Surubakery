@@ -14,7 +14,7 @@ async function pageLoad (){
     
     var user = document.getElementById("user");
     user.innerHTML = getCookie('username')
-    
+    showImg('img/'+getCookie('img'));
     showData(json);
     modalCart();
 }
@@ -27,6 +27,17 @@ function getCookie(name){
 	}catch(err){
 		return false
 	} 
+}
+
+function showImg(filename){
+	if (filename !==""){
+		var showpic = document.getElementById('profilePic');
+		showpic.src = filename;
+		// var temp = document.createElement("img");
+		// temp.src = filename;
+		// temp.className = "profileImg";
+		// showpic.appendChild(temp);
+	}
 }
 
 const loadstoredata = (async () => {
